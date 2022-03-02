@@ -1,0 +1,535 @@
+/* RESET */
+*{
+  box-sizing      : border-box;
+  list-style-type : none;
+  margin          : 0;
+  padding         : 0;
+}
+html{
+  font-size: 62.5%;
+}
+main {
+  align-items     : center;
+  display         : flex;
+  flex-direction  : column;
+  gap             : 3rem;
+  justify-content : center;
+  margin          : auto;
+  max-width       : 136.6rem;
+  min-height      : calc(100vh - 4rem);
+  padding         : 4rem;
+  text-align      : center;
+  width           : 100%;
+}
+header {
+  top: 0;
+}
+footer {
+  bottom: 0;
+}
+header, footer {
+  align-items      : center;
+  background-color : black;
+  color            : white;
+  display          : flex;
+  font-size        : 1rem;
+  height           : 2rem;
+  justify-content  : center;
+  left             : 0;
+  position         : fixed;
+  right            : 0;
+  z-index          : 10;
+}
+a {
+  text-decoration: none;
+}
+th, td {
+  padding: 0.2rem;
+}
+img {
+  align-items     : center;
+  display         : flex;
+  height          : max-content;
+  justify-content : center;
+  max-height      : 100%;
+  object-fit      : cover;
+  text-align      : center;
+  width           : 100%;
+}
+
+/* DEFAULT PAGES */
+.page {
+  align-items     : center;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  padding         : 3rem 0;
+  width           : 100%;
+}
+.page__title {
+  color       : red;
+  font-family : cursive;
+  font-size   : 5rem;
+  font-weight : bold;
+  text-align  : center;
+}
+
+.disabled {
+  cursor         : context-menu;
+  opacity        : 0.5;
+  pointer-events : none;
+}
+
+/* USER FORM MODAL */
+.aside {
+  bottom   : 0;
+  height   : max-content;
+  left     : 0;
+  margin   : auto;
+  position : fixed;
+  right    : 0;
+  top      : 0;
+  width    : max-content;
+  z-index  : 5;
+}
+.aside__blur {
+  backdrop-filter  : blur(1rem);
+  background-color : rgba(0, 0, 0, 0.5);
+  bottom           : 0;
+  left             : 0;
+  position         : fixed;
+  right            : 0;
+  top              : 0;
+  z-index          : -1;
+}
+.aside__container {
+  background-color : white;
+  border-radius    : 2rem;
+  box-shadow       : 0 0 2rem 0.3rem black;
+  display          : grid;
+  gap              : 3rem;
+  padding          : 3rem;
+}
+.aside__form {
+  align-items     : center;
+  display         : flex;
+  gap             : 1rem;
+  justify-content : center;
+}
+.aside__input {
+  background-color : white;
+  border-radius    : 2rem;
+  border           : 0.2rem solid black;
+  font-size        : 1.8rem;
+  height           : max-content;
+  outline          : none;
+  padding          : 0.8rem 1.5rem;
+  transition       : 0.3s ease-in;
+}
+.aside__input:focus {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+}
+.aside__btn {
+  background-color : white;
+  border           : none;
+  cursor           : pointer;
+  font-size        : 1.8rem;
+  padding          : 0.8rem 1.5rem;
+  transition       : 0.3s;
+  z-index          : 1;
+}
+.aside__btn:hover {
+  background-color : black;
+  border-radius    : 2rem;
+  color            : white;
+}
+.notClose {
+  animation: alert-modal 1s forwards;
+}
+.close {
+  animation: close-modal 1s forwards;
+}
+@keyframes alert-modal {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.01);
+  }
+  10% {
+    transform: scale(1.02);
+  }
+  15% {
+    transform: scale(1.03);
+  }
+  20% {
+    transform: scale(1.04);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(1.04);
+  }
+  35% {
+    transform: scale(1.03);
+  }
+  40% {
+    transform: scale(1.02);
+  }
+  45% {
+    transform: scale(1.01);
+  }
+  50% {
+    transform: scale(1);
+  }
+  55% {
+    transform: scale(1.01);
+  }
+  60% {
+    transform: scale(1.02);
+  }
+  65% {
+    transform: scale(1.03);
+  }
+  70% {
+    transform: scale(1.04);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(1.04);
+  }
+  85% {
+    transform: scale(1.03);
+  }
+  90% {
+    transform: scale(1.02);
+  }
+  95% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes close-modal {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* PRODUCT FORM PAGE */
+.form {
+  max-width : 50rem;
+  width     : 100%;
+}
+.form__title {
+  font-size   : 2.5rem;
+  font-weight : bold;
+  padding     : 0.5rem;
+}
+.form__container {
+  display        : flex;
+  flex-direction : column;
+  gap            : 1rem;
+  padding        : 1rem;
+}
+
+.input {
+  align-items           : center;
+  display               : grid;
+  font-size             : 1.5rem;
+  grid-template-columns : 6rem 1fr;
+}
+.input__title {
+  font-style  : italic;
+  font-weight : bold;
+  text-align  : start;
+}
+.input__box {
+  background-color : white;
+  outline          : none;
+  padding          : 0.5rem 1rem;
+  transition       : 0.3s;
+  border              : 0.2rem solid transparent;
+  border-bottom-color : black;
+}
+.input__box:hover {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+.input__box:focus {
+  background-color : aquamarine;
+  color            : blue;
+}
+.input__submit {
+  background-color : white;
+  border           : 0.2rem solid black;
+  border           : none;
+  border-radius    : 0.5rem;
+  cursor           : pointer;
+  outline          : none;
+  padding          : 1rem;
+  text-transform   : uppercase;
+  transition       : 0.3s;
+}
+.input__submit:hover {
+  background-color : black;
+  color            : white;
+}
+.input__submit:focus {
+  color: red;
+}
+
+.error__message {
+  overflow: hidden;
+  margin-top: 0.2rem;
+  height: 1.8rem;
+  animation: blockError 0.5s linear forwards;
+}
+.error__message::after {
+  content: "Error: Llene correctamente las entradas";
+  color     : red;
+  font-size : 1.3rem;
+}
+.error__input {
+  border-bottom-color : red;
+}
+@keyframes blockError {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 1.8rem;
+  }
+}
+
+/* PRODUCTS HISTORY PAGE */
+.table {
+  border : 0.2rem solid black;
+  width  : 100%;
+}
+.table__header {
+  background-color : gray;
+  color            : white;
+  font-family      : monospace;
+  font-size        : 2rem;
+  margin           : 0;
+}
+.table__header > th {
+  background-color: black;
+}
+.table__main {
+  font-family : monospace;
+  font-size   : 1.5rem;
+}
+.table__main > td {
+  align-items      : center;
+  background-color : bisque;
+  border-left      : 0.1rem solid black;
+  border-right     : 0.1rem solid black;
+  display          : flex;
+  height           : 6rem;
+  justify-content  : center;
+  text-align       : center;
+}
+.table__header, .table__main {
+  display               : grid;
+  gap                   : 0.5rem;
+  grid-template-columns : repeat(3, 1fr);
+  padding               : 0.5rem;
+}
+.table__img {
+  align-items : center;
+  display     : flex;
+  height      : calc(100% - 0.2rem);
+}
+.table__none {
+  border-radius : 1rem;
+  color         : red;
+  font-size     : 2rem;
+  font-weight   : 900;
+  grid-column   : 1/4;
+  margin-top    : 1rem;
+  padding       : 1.5rem;
+  text-align    : center;
+}
+
+/* CHAT PAGE */
+.chat {
+  background-color : darkorchid;
+  border-radius    : 1rem;
+  display          : grid;
+  gap              : 1rem;
+  max-width        : 65rem;
+  padding          : 1rem;
+  width            : 100%;
+}
+.chat__top {
+  font-size             : 1.2rem;
+  grid-template-columns : auto 1fr 8rem;
+  justify-self          : center;
+  max-width             : 40rem;
+}
+.chat__middle {
+  background-color   : white;
+  border-radius      : 1rem;
+  border             : 0.2rem solid black;
+  display            : grid;
+  grid-template-rows : 1fr auto;
+  width              : 100%;
+}
+.chat__bottom {
+  grid-template-columns: 1fr 8rem;
+}
+.chat__top, .chat__bottom {
+  align-items : center;
+  display     : grid;
+  gap         : 1rem;
+}
+.chat__box {
+  align-items      : center;
+  background-color : white;
+  border-radius    : 2rem;
+  border           : 0.2rem solid black;
+  display          : flex;
+  font-size        : 1.8rem;
+  outline          : none;
+  overflow         : hidden;
+  padding          : 0.8rem 1.5rem;
+  transition       : 0.3s;
+}
+.chat__box--user {
+  font-size  : 1.5rem;
+  text-align : center;
+}
+.chat__btn {
+  background-color : black;
+  border           : none;
+  color            : white;
+  cursor           : pointer;
+  font-size        : 1.5rem;
+  outline          : none;
+  padding          : 1rem;
+}
+.chat__btn--save::after {
+  content: "Guardar";
+}
+.chat__btn--change::after {
+  content: "Cambiar";
+}
+.chat__container {
+  display        : flex;
+  flex-direction : column;
+  font-family    : sans-serif;
+  font-size      : 1.4rem;
+  gap            : 0.6rem;
+  padding        : 0.6rem;
+}
+.chat__container:first-child {
+  height     : 30rem;
+  overflow-y : auto;
+}
+.chat__container:last-child {
+  height     : 2.8rem;
+  overflow   : hidden;
+  text-align : start;
+}
+.chat__container:last-child .bot {
+  padding: 0;
+}
+.chat__container:first-child > div:first-child {
+  margin-top: auto;
+}
+.bot {
+  font-size : 1.1rem;
+  padding   : 0.5rem 0;
+}
+.bot__user {
+  color       : blue;
+  font-weight : bold;
+}
+.bot__time {
+  color: red;
+}
+.bot__user {
+  color       : blue;
+  font-weight : bold;
+}
+.bot__writing::after {
+  content: "";
+  animation : writing 1s linear infinite;
+  font-size : 1rem;
+}
+@keyframes writing {
+  0% {
+    content: "escribiendo";
+  }
+  34% {
+    content: "escribiendo.";
+  }
+  67% {
+    content: "escribiendo..";
+  }
+  100% {
+    content: "escribiendo...";
+  }
+}
+.userMessage {
+  animation          : newMessage 0.15s linear forwards;
+  border-radius      : 1rem;
+  display            : grid;
+  gap                : 0.5rem;
+  grid-template-rows : 1fr auto;
+  max-width          : 32rem;
+  padding            : 1rem;
+  position           : relative;
+  text-align         : start;
+  width              : max-content;
+}
+@keyframes newMessage {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.myUser {
+  align-self              : flex-end;
+  background-color        : rgb(184, 184, 184);
+  border-top-right-radius : 0;
+  margin-right            : 1rem;
+}
+.myUser::after {
+  border             : 1rem solid rgb(184, 184, 184);
+  border-right-color : transparent;
+  right              : -1rem;
+}
+.anotherUser {
+  align-self             : flex-start;
+  background-color       : rgb(153, 245, 214);
+  border-top-left-radius : 0;
+  margin-left            : 1rem;
+}
+.anotherUser::after {
+  border            : 1rem solid rgb(153, 245, 214);
+  border-left-color : transparent;
+  left              : -1rem;
+}
+.userMessage::after {
+  content: "";
+  border-bottom-color : transparent;
+  display             : block;
+  position            : absolute;
+  top                 : 0;
+  z-index             : 0;
+}
+.userMessage > p:last-child {
+  color      : green;
+  font-style : italic;
+}

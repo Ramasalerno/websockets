@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea clase 12 Salerno</title>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="./index.js" defer></script>
+  <script src="./webSocket.js" defer></script>
+</head>
+<body>
+  <header>Websockets</header>
+
+  <aside class="aside">
+    <div class="aside__blur"></div>
+    <section class="aside__container">
+      <h2 class="page__title">Bienvenido/a:</h2>
+      <section class="aside__form" id="asideForm">
+        <input type="text" name="asideInput" id="asideInput" placeholder="Yo soy..." class="aside__input">
+        <button id="asideButton" class="aside__btn disabled" disabled>Ingresar</button>
+      </section>
+    </section>
+  </aside>
+
+  <main>
+    <section class="page">
+      <h2 class="page__title">Formulario</h2>
+      <fieldset class="form">
+        <legend class="form__title">Ingresar los datos aquí:</legend>
+        <form class="form__container" id="formProducts">
+          <section class="input">
+            <label for="nameProduct" class="input__title">Nombre:</label>
+            <input type="text", name="nameProduct", id="nameProduct", class="input__box">
+          </section>
+          <section class="input">
+            <label for="priceProduct" class="input__title">Precio:</label>
+            <input type="number" name="priceProduct" id="priceProduct", class="input__box">
+          </section>
+          <section class="input">
+            <label for="imageProduct" class="input__title">Foto:</label>
+            <input type="text" name="imageProduct" id="imageProduct", class="input__box">
+          </section>
+          <input type="submit" value="enviar" class="input__submit">
+          <p id="errorMessageProduct"></p>
+        </form>
+      </fieldset>
+    </section>
+  
+    <section class="page">
+      <h2 class="page__title">Productos</h2>
+      <table class="table" id="historyProducts"></table>
+    </section>
+  
+    <section class="page">
+      <h2 class="page__title">Chat</h2>
+      <section class="chat">
+        <section class="chat__top">
+          <p>Nombre de usuario:</p>
+          <input type="text" name="userName" id="userName" class="chat__box chat__box--user disabled" placeholder="Yo soy..." disabled>
+          <button class="chat__btn chat__btn--change" id="changeUserName"></button>
+        </section>
+        <section class="chat__middle">
+          <section class="chat__container" id="renderMessages">
+
+          </section>
+          <section class="chat__container" id="renderNotification">
+
+          </section>
+        </section>
+        <section id="messageBox" class="chat__bottom">
+          <input name="messageInput" id="messageInput" class="chat__box" placeholder="Escribe un mensaje...">
+          <button class="chat__btn" id="messageButton">Enviar</button>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer>Salerno Ramiro - Coder House </footer>
+</body>
+</html>
