@@ -2,7 +2,7 @@ const socket = io.connect();
 
 const fetchProducts = async (products) => {
   try {
-    const res = await fetch(``);
+    const res = await fetch(`https://onyx-storm-germanium.glitch.me/history.hbs`);
     const data = await res.text();
     const template = Handlebars.compile(data);
     const pLength = products.length > 0;
